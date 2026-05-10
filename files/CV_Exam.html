@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Machine Learning Mid Semester Exam – Wine Classification</title>
+    <title>Computer Vision Makeup Examination</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Code+Pro:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -14,6 +14,8 @@
             --teal: #0e7c7b;
             --teal-light: #12a89d;
             --amber: #e07b2e;
+            --violet: #5c3d8f;
+            --violet-light: #7b58b5;
             --cream: #f7f3ee;
             --white: #ffffff;
             --gray-light: #eef2f7;
@@ -55,8 +57,8 @@
             width: 260px;
             height: 260px;
             border-radius: 50%;
-            background: var(--teal);
-            opacity: 0.18;
+            background: var(--violet);
+            opacity: 0.22;
         }
 
         .banner::after {
@@ -132,6 +134,30 @@
             flex-shrink: 0;
         }
 
+        /* ── Marks badge on banner ── */
+        .marks-badge {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            padding: 6px 16px;
+            margin-top: 20px;
+        }
+
+        .marks-badge .big {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--amber);
+        }
+
+        .marks-badge .label {
+            font-size: 13px;
+            color: #b0bfcc;
+        }
+
         /* ── Container ── */
         .container {
             max-width: 900px;
@@ -165,7 +191,7 @@
         /* ── Overview card ── */
         .overview-card {
             background: white;
-            border-left: 4px solid var(--teal);
+            border-left: 4px solid var(--violet);
             border-radius: 0 10px 10px 0;
             padding: 22px 26px;
             font-size: 15px;
@@ -178,17 +204,70 @@
             color: var(--navy);
         }
 
+        /* ── Part label strip ── */
+        .part-strip {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 32px 0 14px;
+        }
+
+        .part-label {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .part-a .part-label {
+            background: rgba(92, 61, 143, 0.12);
+            color: var(--violet);
+            border: 1px solid rgba(92, 61, 143, 0.3);
+        }
+
+        .part-b .part-label {
+            background: rgba(14, 124, 123, 0.10);
+            color: var(--teal);
+            border: 1px solid rgba(14, 124, 123, 0.3);
+        }
+
+        .part-c .part-label {
+            background: rgba(224, 123, 46, 0.12);
+            color: var(--amber);
+            border: 1px solid rgba(224, 123, 46, 0.3);
+        }
+
+        .part-strip .part-title {
+            font-family: 'Merriweather', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .part-strip .part-marks {
+            margin-left: auto;
+            font-size: 13px;
+            color: var(--text-muted);
+            background: var(--gray-light);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
         /* ── Task cards ── */
         .tasks-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
         .task-card {
             background: white;
             border-radius: 10px;
-            padding: 22px 26px;
+            padding: 20px 24px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             display: grid;
             grid-template-columns: 48px 1fr;
@@ -206,10 +285,9 @@
             width: 48px;
             height: 48px;
             border-radius: 10px;
-            background: var(--navy);
             color: white;
             font-family: 'Merriweather', serif;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -217,28 +295,67 @@
             flex-shrink: 0;
         }
 
-        .task-card:nth-child(2) .task-number {
+        /* Part A colours */
+        .part-a .task-card:nth-child(1) .task-number {
+            background: var(--violet);
+        }
+
+        .part-a .task-card:nth-child(2) .task-number {
+            background: var(--violet-light);
+        }
+
+        .part-a .task-card:nth-child(3) .task-number {
+            background: #7040a0;
+        }
+
+        .part-a .task-card:nth-child(4) .task-number {
+            background: #8a5cbf;
+        }
+
+        .part-a .task-card:nth-child(5) .task-number {
+            background: #4a2d78;
+        }
+
+        .part-a .task-card:nth-child(6) .task-number {
+            background: #9b73cc;
+        }
+
+        /* Part B colours */
+        .part-b .task-card:nth-child(1) .task-number {
             background: var(--teal);
         }
 
-        .task-card:nth-child(3) .task-number {
-            background: #1a5c8a;
-        }
-
-        .task-card:nth-child(4) .task-number {
+        .part-b .task-card:nth-child(2) .task-number {
             background: var(--teal-light);
         }
 
-        .task-card:nth-child(5) .task-number {
-            background: var(--amber);
+        .part-b .task-card:nth-child(3) .task-number {
+            background: #0a6060;
+        }
+
+        .part-b .task-card:nth-child(4) .task-number {
+            background: var(--teal);
         }
 
         .task-body h3 {
             font-family: 'Merriweather', serif;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .marks-pill {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+            background: var(--gray-light);
+            color: var(--text-muted);
         }
 
         .task-body p {
@@ -279,7 +396,25 @@
             border: 1px solid rgba(14, 124, 123, 0.25);
             padding: 2px 8px;
             border-radius: 4px;
-            margin-top: 4px;
+            margin: 2px 2px 0 0;
+        }
+
+        /* ── Filter sub-cards ── */
+        .filter-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            background: rgba(92, 61, 143, 0.08);
+            border: 1px solid rgba(92, 61, 143, 0.25);
+            color: var(--violet);
+            font-family: 'Source Code Pro', monospace;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
         }
 
         /* ── Guidelines ── */
@@ -388,7 +523,7 @@
         /* ── Evaluation ── */
         .eval-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 16px;
         }
 
@@ -397,28 +532,40 @@
             border-radius: 10px;
             padding: 22px 24px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            text-align: center;
         }
 
         .eval-card .marks {
             font-family: 'Merriweather', serif;
             font-size: 36px;
             font-weight: 700;
-            color: var(--navy);
             line-height: 1;
             margin-bottom: 4px;
         }
 
         .eval-card .marks span {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--text-muted);
             font-family: 'DM Sans', sans-serif;
             font-weight: 400;
         }
 
         .eval-card p {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
             margin-top: 4px;
+        }
+
+        .eval-card.part-a-card .marks {
+            color: var(--violet);
+        }
+
+        .eval-card.part-b-card .marks {
+            color: var(--teal);
+        }
+
+        .eval-card.part-c-card .marks {
+            color: var(--amber);
         }
 
         .eval-criteria {
@@ -480,12 +627,15 @@
     <!-- ── Header ── -->
     <div class="banner">
         <div class="banner-inner">
-            <h1>Introduction to <span>Artificial Intelligence</span></h1>
-            <p class="subtitle">Mid Semester Examination &nbsp;—&nbsp; Wine Quality Classification</p>
+            <div class="course-tag">AI309E &nbsp;·&nbsp; 4th Semester</div>
+            <h1>Introduction to Computer Vision</h1>
+            <p class="subtitle">Makeup Examination &nbsp;—&nbsp; Preprocessing · Feature Extraction · Analysis</p>
             <div class="meta-row">
-                <div class="meta-item"><span class="dot"></span>Scikit-Learn</div>
-                <div class="meta-item"><span class="dot"></span>Jupyter Notebook (.ipynb)</div>
-                <div class="meta-item"><span class="dot"></span>Total Marks: 15</div>
+                <div class="meta-item"><span class="dot"></span>Python · OpenCV · Scikit-Image</div>
+            </div>
+            <div class="marks-badge">
+                <span class="big">40</span>
+                <span class="label">Total Marks</span>
             </div>
         </div>
     </div>
@@ -500,93 +650,164 @@
         </div>
 
         <div class="overview-card">
-            In this examination, you are required to build a <strong>multi-class classification model</strong> using the
-            <strong>Wine Dataset</strong> available in scikit-learn. The dataset contains chemical analysis results
-            of wines grown in the same region of Italy but derived from <strong>three different cultivars</strong>,
-            and your task is to classify each wine sample into one of the three classes
-            (<strong>class_0</strong>, <strong>class_1</strong>, or <strong>class_2</strong>).
+            You are provided with a dataset of <strong>5 images</strong>. For each image, you must implement a
+            complete <strong>image processing and feature extraction pipeline</strong>.
             <br><br>
-            All tasks must be implemented using <strong>scikit-learn</strong> inside a <strong>Jupyter
-                Notebook</strong>,
-            with each task placed in a separate code cell, clearly labelled and commented.
+            Each task must be in a separate, clearly labelled code cell with
+            concise comments. Display <strong>original and processed images side-by-side</strong> wherever applicable,
+            and label all plots and axes.
+            <br><br>
+            Also, you have to submit your notebook through a Google Form link provided at the end of this document. It
+            also contains a quiz that you need to attempt.
+
         </div>
 
-        <!-- Tasks -->
+        <!-- ═══════════════ PART A ═══════════════ -->
         <div class="section-heading">
             <h2>Tasks to be Performed</h2>
             <div class="line"></div>
         </div>
 
-        <div class="tasks-grid">
+        <!-- Part A -->
+        <div class="part-strip part-a">
+            <span class="part-label">PART A</span>
+            <span class="part-title">Image Preprocessing &amp; Augmentation</span>
+            <span class="part-marks">18 Marks</span>
+        </div>
 
-            <!-- Task 1 -->
+        <div class="tasks-grid part-a">
+
             <div class="task-card">
                 <div class="task-number">1</div>
                 <div class="task-body">
-                    <h3>Load the Dataset</h3>
-                    <p>Load the Wine dataset and explore its key attributes.</p>
+                    <h3>Resizing <span class="marks-pill">3 mark</span></h3>
+                    <p>Standardise the spatial dimensions of all images before further processing.</p>
                     <ul>
-                        <li>Display the total <strong>number of features</strong> in the dataset.</li>
-                        <li>Display the <strong>target class labels</strong> (class_0 / class_1 / class_2).</li>
-                        <li>Inspect <code>.data</code>, <code>.target</code>, and <code>.feature_names</code>.</li>
+                        <li>Resize each image to <strong>256 × 256</strong> pixels using bilinear interpolation.</li>
+                        <li>Display the original and resized images side-by-side with their dimensions annotated.</li>
                     </ul>
-                    <div style="margin-top:10px;">
-                        <span class="code-hint">from sklearn.datasets import load_wine</span>
-                    </div>
                 </div>
             </div>
 
-            <!-- Task 2 -->
             <div class="task-card">
                 <div class="task-number">2</div>
                 <div class="task-body">
-                    <h3>Split the Dataset</h3>
-                    <p>Divide the data into training and testing subsets.</p>
+                    <h3>Flipping <span class="marks-pill">3 mark</span></h3>
+                    <p>Generate mirror-image variants of each input image.</p>
                     <ul>
-                        <li>Use an <strong>70 / 30</strong> train-test split.</li>
-                        <li>Set a fixed <code>random_state</code> to ensure reproducibility.</li>
+                        <li>Apply <strong>vertical flip</strong> (top–bottom) on each image.</li>
+                        <li>Display all versions (original, V-flip) in a single row.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Task 3 -->
             <div class="task-card">
                 <div class="task-number">3</div>
                 <div class="task-body">
-                    <h3>Train a Decision Tree Classifier</h3>
-                    <p>Build and fit a Decision Tree model on the training data.</p>
+                    <h3>Brightness Adjustment <span class="marks-pill">3 mark</span></h3>
+                    <p>Simulate different lighting conditions by modifying pixel intensity.</p>
                     <ul>
-                        <li>Import <code>DecisionTreeClassifier</code> from <code>sklearn.tree</code>.</li>
-                        <li>Train the model on training features and labels.</li>
-                        <li>Set <code>random_state</code> for reproducibility.</li>
+                        <li><strong>Increase</strong> brightness.</li>
+                        <li>Clip pixel values to the valid range [0, 255] and display all three variants.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Task 4 -->
             <div class="task-card">
                 <div class="task-number">4</div>
                 <div class="task-body">
-                    <h3>Predict Class Labels</h3>
-                    <p>Use the trained model to generate predictions on the test set.</p>
+                    <h3>Contrast Adjustment <span class="marks-pill">3 marks</span></h3>
+                    <p>Alter the tonal range of each image to enhance or suppress detail.</p>
                     <ul>
-                        <li>Call <code>.predict()</code> on the <strong>test features</strong>.</li>
-                        <li>Store the predicted labels for use in evaluation.</li>
+                        <li><strong>Enhance</strong> contrast.</li>
+                        <li>Display the original alongside both contrast-adjusted versions.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Task 5 -->
             <div class="task-card">
                 <div class="task-number">5</div>
                 <div class="task-body">
-                    <h3>Evaluate the Model</h3>
-                    <p>Assess classifier performance using standard metrics.</p>
+                    <h3>Rotation <span class="marks-pill">3 marks</span></h3>
+                    <p>Rotate each image about its centre at different angle.</p>
                     <ul>
-                        <li>Compute <strong>Accuracy</strong> on the test set.</li>
-                        <li>Generate a <strong>Confusion Matrix</strong> and display its values.</li>
-                        <li>Print the <strong>Classification Report</strong> showing precision, recall, and F1-score for
-                            each class.</li>
+                        <li>Rotate by <strong>45°</strong>.</li>
+                        <li>Use a rotation matrix centred at the image midpoint; preserve the full canvas.</li>
+                        <li>Display all versions (original + 1 rotations) in a single matplotlib figure.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">6</div>
+                <div class="task-body">
+                    <h3>Spatial Filtering <span class="marks-pill">3 marks</span></h3>
+                    <p>Apply smoothing filters to each image and compare their noise-reduction behaviour.</p>
+                    <ul>
+                        <li><strong>Bilateral Filter</strong> — edge-preserving smoothing.</li>
+                        <li>Display a comparison between original and filtered images for each image; note key visual
+                            differences.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div><!-- /part-a tasks -->
+
+        <!-- Part B -->
+        <div class="part-strip part-b">
+            <span class="part-label">PART B</span>
+            <span class="part-title">Feature Extraction</span>
+            <span class="part-marks">12 Marks</span>
+        </div>
+
+        <div class="tasks-grid part-b">
+
+            <div class="task-card">
+                <div class="task-number">7</div>
+                <div class="task-body">
+                    <h3>HSV Histogram Analysis <span class="marks-pill">3 marks</span></h3>
+                    <p>Quantify colour distribution by plotting channel histogram.</p>
+                    <ul>
+                        <li>Compute and plot the <strong>histogram for HUE channel</strong> for all 5 images.</li>
+                        <li>Overlay or juxtapose histograms of all 5 images on a single plot to compare colour
+                            distributions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">8</div>
+                <div class="task-body">
+                    <h3>Edge Detection (Canny) <span class="marks-pill">3 marks</span></h3>
+                    <p>Detect structural boundaries within each image using the Canny algorithm.</p>
+                    <ul>
+                        <li>Apply <strong>Canny Edge Detection</strong>.</li>
+                        <li>Display the original image alongside the edge map for each of the 5 images.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">9</div>
+                <div class="task-body">
+                    <h3>HOG — Histogram of Oriented Gradients <span class="marks-pill">3 marks</span></h3>
+                    <p>Extract gradient-based structural features that capture shape and object appearance.</p>
+                    <ul>
+                        <li>Extract <strong>HOG features</strong> using suitable parameters.</li>
+                        <li>Visualise the <strong>HOG gradient image</strong> alongside the original for each of the 5
+                            images.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">10</div>
+                <div class="task-body">
+                    <h3>LBP — Local Binary Pattern <span class="marks-pill">3 marks</span></h3>
+                    <p>Capture local texture characteristics by encoding neighbourhood intensity patterns.</p>
+                    <ul>
+                        <li>Convert each image to grayscale; compute the <strong>LBP representation</strong>.</li>
+                        <li>Display the <strong>LBP image</strong> alongside the original for each of the 5 images.</li>
                     </ul>
                 </div>
             </div>
@@ -601,42 +822,40 @@
 
         <div class="submission-card">
             <ul>
-                <li>Submit a <strong>single Jupyter Notebook (.ipynb)</strong> containing all tasks.</li>
-                <li>Ensure the notebook executes without errors from top to bottom.</li>
+                <li>Submit a <strong>single Jupyter Notebook (.ipynb)</strong> containing all 10 tasks.</li>
+                <li>Ensure all cell outputs are <strong>saved and visible</strong> before submitting.</li>
                 <li>
-                    Include the following details at the <strong>top of your notebook</strong>:
+                    Include the following at the <strong>top of your notebook</strong> in a markdown cell:
                     <ul class="sub-list">
                         <li>Full Name</li>
                         <li>Roll Number</li>
+                        <li>Section / Batch</li>
                     </ul>
                 </li>
                 <li>Submit using the Google Form link below before the deadline.</li>
             </ul>
-            <a class="btn-submit" href="https://forms.gle/5jaTXNKXdMZsnnst6" target="_blank">
-                Submit Your Notebook &rarr;
-            </a>
+            <a class="btn-submit" href="https://forms.gle/WW3DTJLVM6h5CSEd8" target="_blank">Submit Your Notebook
+                &rarr;</a>
         </div>
 
         <!-- Evaluation -->
         <div class="section-heading">
-            <h2>Evaluation Criteria</h2>
+            <h2>Marks Distribution</h2>
             <div class="line"></div>
         </div>
 
-        <div class="eval-row">
-            <div class="eval-card">
-                <div class="marks">15 <span>marks</span></div>
-                <p>Total marks for this examination</p>
+        <div class="eval-row" style="margin-bottom:16px;">
+            <div class="eval-card part-a-card">
+                <div class="marks">18 <span>marks</span></div>
+                <p>Part A — Preprocessing &amp; Augmentation</p>
             </div>
-            <div class="eval-criteria">
-                <ul>
-                    <li>Correct loading and exploration of the dataset.</li>
-                    <li>Proper train-test split implementation.</li>
-                    <li>Correct training of the Decision Tree model.</li>
-                    <li>Accurate prediction on test data.</li>
-                    <li>Correct computation of accuracy, confusion matrix, and classification report.</li>
-                    <li>Code clarity, comments, and organisation.</li>
-                </ul>
+            <div class="eval-card part-b-card">
+                <div class="marks">12 <span>marks</span></div>
+                <p>Part B — Feature Extraction</p>
+            </div>
+            <div class="eval-card part-c-card">
+                <div class="marks">10 <span>marks</span></div>
+                <p>Part C — Quiz</p>
             </div>
         </div>
 
