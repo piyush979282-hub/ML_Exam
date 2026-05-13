@@ -650,7 +650,7 @@
         </div>
 
         <div class="overview-card">
-            You are provided with a dataset of <strong>5 images</strong>. For each image, you must implement a
+            You are provided with a dataset of <strong>2 images</strong>. For each image, you must implement a
             complete <strong>image processing and feature extraction pipeline</strong>.
             <br><br>
             Each task must be in a separate, clearly labelled code cell with
@@ -677,22 +677,11 @@
 
         <div class="tasks-grid part-a">
 
+
             <div class="task-card">
                 <div class="task-number">1</div>
                 <div class="task-body">
-                    <h3>Resizing <span class="marks-pill">3 mark</span></h3>
-                    <p>Standardise the spatial dimensions of all images before further processing.</p>
-                    <ul>
-                        <li>Resize each image to <strong>256 × 256</strong> pixels using bilinear interpolation.</li>
-                        <li>Display the original and resized images side-by-side with their dimensions annotated.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="task-card">
-                <div class="task-number">2</div>
-                <div class="task-body">
-                    <h3>Flipping <span class="marks-pill">3 mark</span></h3>
+                    <h3>Flipping <span class="marks-pill">5 mark</span></h3>
                     <p>Generate mirror-image variants of each input image.</p>
                     <ul>
                         <li>Apply <strong>vertical flip</strong> (top–bottom) on each image.</li>
@@ -701,22 +690,11 @@
                 </div>
             </div>
 
-            <div class="task-card">
-                <div class="task-number">3</div>
-                <div class="task-body">
-                    <h3>Brightness Adjustment <span class="marks-pill">3 mark</span></h3>
-                    <p>Simulate different lighting conditions by modifying pixel intensity.</p>
-                    <ul>
-                        <li><strong>Increase</strong> brightness.</li>
-                        <li>Clip pixel values to the valid range [0, 255] and display all three variants.</li>
-                    </ul>
-                </div>
-            </div>
 
             <div class="task-card">
-                <div class="task-number">4</div>
+                <div class="task-number">2</div>
                 <div class="task-body">
-                    <h3>Contrast Adjustment <span class="marks-pill">3 marks</span></h3>
+                    <h3>Contrast Adjustment <span class="marks-pill">5 marks</span></h3>
                     <p>Alter the tonal range of each image to enhance or suppress detail.</p>
                     <ul>
                         <li><strong>Enhance</strong> contrast.</li>
@@ -726,12 +704,12 @@
             </div>
 
             <div class="task-card">
-                <div class="task-number">5</div>
+                <div class="task-number">3</div>
                 <div class="task-body">
-                    <h3>Rotation <span class="marks-pill">3 marks</span></h3>
+                    <h3>Rotation <span class="marks-pill">5 marks</span></h3>
                     <p>Rotate each image about its centre at different angle.</p>
                     <ul>
-                        <li>Rotate by <strong>45°</strong>.</li>
+                        <li>Rotate by <strong>90°</strong>.</li>
                         <li>Use a rotation matrix centred at the image midpoint; preserve the full canvas.</li>
                         <li>Display all versions (original + 1 rotations) in a single matplotlib figure.</li>
                     </ul>
@@ -739,9 +717,9 @@
             </div>
 
             <div class="task-card">
-                <div class="task-number">6</div>
+                <div class="task-number">4</div>
                 <div class="task-body">
-                    <h3>Spatial Filtering <span class="marks-pill">3 marks</span></h3>
+                    <h3>Spatial Filtering <span class="marks-pill">5 marks</span></h3>
                     <p>Apply smoothing filters to each image and compare their noise-reduction behaviour.</p>
                     <ul>
                         <li><strong>Bilateral Filter</strong> — edge-preserving smoothing.</li>
@@ -763,54 +741,34 @@
         <div class="tasks-grid part-b">
 
             <div class="task-card">
-                <div class="task-number">7</div>
+                <div class="task-number">5</div>
                 <div class="task-body">
-                    <h3>HSV Histogram Analysis <span class="marks-pill">3 marks</span></h3>
+                    <h3>HSV Histogram Analysis <span class="marks-pill">5 marks</span></h3>
                     <p>Quantify colour distribution by plotting channel histogram.</p>
                     <ul>
-                        <li>Compute and plot the <strong>histogram for HUE channel</strong> for all 5 images.</li>
-                        <li>Overlay or juxtapose histograms of all 5 images on a single plot to compare colour
+                        <li>Compute and plot the <strong>histogram for HUE channel</strong> for all images.</li>
+                        <li>Overlay or juxtapose histograms of all images on a single plot to compare colour
                             distributions.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="task-card">
-                <div class="task-number">8</div>
-                <div class="task-body">
-                    <h3>Edge Detection (Canny) <span class="marks-pill">3 marks</span></h3>
-                    <p>Detect structural boundaries within each image using the Canny algorithm.</p>
-                    <ul>
-                        <li>Apply <strong>Canny Edge Detection</strong>.</li>
-                        <li>Display the original image alongside the edge map for each of the 5 images.</li>
-                    </ul>
-                </div>
-            </div>
+            
 
             <div class="task-card">
-                <div class="task-number">9</div>
+                <div class="task-number">6</div>
                 <div class="task-body">
-                    <h3>HOG — Histogram of Oriented Gradients <span class="marks-pill">3 marks</span></h3>
+                    <h3>HOG — Histogram of Oriented Gradients <span class="marks-pill">5 marks</span></h3>
                     <p>Extract gradient-based structural features that capture shape and object appearance.</p>
                     <ul>
                         <li>Extract <strong>HOG features</strong> using suitable parameters.</li>
-                        <li>Visualise the <strong>HOG gradient image</strong> alongside the original for each of the 5
+                        <li>Visualise the <strong>HOG gradient image</strong> alongside the original for each of the 
                             images.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="task-card">
-                <div class="task-number">10</div>
-                <div class="task-body">
-                    <h3>LBP — Local Binary Pattern <span class="marks-pill">3 marks</span></h3>
-                    <p>Capture local texture characteristics by encoding neighbourhood intensity patterns.</p>
-                    <ul>
-                        <li>Convert each image to grayscale; compute the <strong>LBP representation</strong>.</li>
-                        <li>Display the <strong>LBP image</strong> alongside the original for each of the 5 images.</li>
-                    </ul>
-                </div>
-            </div>
+            
 
         </div>
 
@@ -846,11 +804,11 @@
 
         <div class="eval-row" style="margin-bottom:16px;">
             <div class="eval-card part-a-card">
-                <div class="marks">18 <span>marks</span></div>
+                <div class="marks">20 <span>marks</span></div>
                 <p>Part A — Preprocessing &amp; Augmentation</p>
             </div>
             <div class="eval-card part-b-card">
-                <div class="marks">12 <span>marks</span></div>
+                <div class="marks">10 <span>marks</span></div>
                 <p>Part B — Feature Extraction</p>
             </div>
             <div class="eval-card part-c-card">

@@ -2,48 +2,6 @@
   "content": [
     {
       "content": null,
-      "created": "2026-05-10T13:43:32.094606Z",
-      "format": null,
-      "hash": null,
-      "hash_algorithm": null,
-      "last_modified": "2026-05-10T13:43:01.635991Z",
-      "mimetype": "image/tiff",
-      "name": "5.tiff",
-      "path": "Dataset/5.tiff",
-      "size": 786572,
-      "type": "file",
-      "writable": true
-    },
-    {
-      "content": null,
-      "created": "2026-05-10T13:43:32.091951Z",
-      "format": null,
-      "hash": null,
-      "hash_algorithm": null,
-      "last_modified": "2026-05-10T13:43:01.629012Z",
-      "mimetype": "image/png",
-      "name": "2.png",
-      "path": "Dataset/2.png",
-      "size": 459805,
-      "type": "file",
-      "writable": true
-    },
-    {
-      "content": null,
-      "created": "2026-05-10T13:43:32.090840Z",
-      "format": null,
-      "hash": null,
-      "hash_algorithm": null,
-      "last_modified": "2026-05-10T13:43:01.629012Z",
-      "mimetype": "image/png",
-      "name": "1.png",
-      "path": "Dataset/1.png",
-      "size": 464915,
-      "type": "file",
-      "writable": true
-    },
-    {
-      "content": null,
       "created": "2026-05-10T13:43:32.093702Z",
       "format": null,
       "hash": null,
